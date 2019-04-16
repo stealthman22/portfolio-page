@@ -1,0 +1,92 @@
+html,
+body {
+    filter: grayscale(100%);
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    ;
+}
+
+#navbar {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px black solid;
+}
+
+#navbar ul {
+
+    display: flex;
+    list-style-type: none;
+    width: 80%;
+    justify-content: flex-end;
+
+}
+
+#navbar ul a {
+    text-decoration: none;
+    padding: 1em 0.2em 0.2em 2em;
+    align-self: flex-end;
+}
+
+#welcome {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('img/coffee-computer-cup-114907.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+
+}
+
+@media (max-width: 800px) {
+    #welcome {
+        background-size: contain;
+
+    }
+
+    /*  @media (max-width: 300px) {
+        #welcome {
+            background-image: none;
+        } 
+    }*/
+}
+
+#projects {}
+
+.project-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.project-tile {
+    height: 200px;
+    width: 300px;
+    border: 2px black solid;
+    margin: 2em 5em;
+    /* padding: 2em; */
+}
+
+#footer {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+#footer ul {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+#footer ul a {
+    padding: 1em;
+
+}
