@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 html,
 body {
     filter: grayscale(100%);
-    padding: 0;
-    margin: 0;
+
     font-size: 1rem;
-    ;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar {
@@ -29,29 +36,90 @@ body {
     align-self: flex-end;
 }
 
-#welcome {
+.slider {
+    position: relative;
+    overflow: hidden;
     height: 100vh;
     width: 100vw;
-    background-image: url('img/coffee-computer-cup-114907.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     text-align: center;
 
 }
 
+.slide {
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* this will make the div's invisible, and the transition allows them pass in an animated manner */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: 0px;
+    width: -700px;
+    opacity: 0;
+    /* background-color: rgba(255, 255, 255, 0.8); 
+    color: #333; */
+    padding: 20px;
+}
+
+.slide .content h4 {
+    margin-bottom: 10px;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(700px);
+    transition: all 0.7s ease-in-out 0.3s;
+
+}
+
+.slide
+/* Background images */
+
+.slide:first-child {
+    background: url('./img/4k-wallpaper-beans-beverage-1749303.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url('img/beverage-caffeine-coffee-1212842.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url('img/black-and-white-desk-electronics-265679.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url('img/coffee-computer-cup-114907.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+    background: url('img/design-development-electronics-326424.jpg') no-repeat center center/cover;
+}
+
+
+/* 
 @media (max-width: 800px) {
     #welcome {
         background-size: contain;
 
     }
 
-    /*  @media (max-width: 300px) {
+     @media (max-width: 300px) {
         #welcome {
             background-image: none;
         } 
     }*/
-}
+
 
 #projects {}
 
