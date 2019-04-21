@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px black solid;
+}
+
+.nav ul {
+
+    display: flex;
+    list-style-type: none;
+    width: 80%;
+    justify-content: flex-end;
+
+}
+
+
+.nav ul a {
+    text-decoration: none;
+    padding: 1em 0.2em 0.2em 2em;
+    align-self: flex-end;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* this will make the div's invisible, and the transition allows them pass in an animated manner */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    opacity: 0;
+    /* background-color: rgba(255, 255, 255, 0.8); 
+    color: #333; */
+    padding: 20px;
+}
+
+.slide .content h4 {
+    margin-bottom: 10px;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    /* selected properties,timing, funtion, delay*/
+    transition: all 0.7s ease-in-out 0.3s;
+
+}
+
+.buttons {
+    position: absolute;
+    width: 100%;
+    top: 60vh
+}
+
+.buttons button#next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+
+.buttons button#prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+
+.buttons button {
+    box-decoration-break: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+
+
+    /* Removes the outline that can cover an element */
+    outline: hidden;
+}
+
+.buttons button:hover {
+    background-color: #fff;
+    color: #333;
+    transition: all 0.4s ease-in-out;
+}
+
+
+
+
+/* Background images */
+
+.slide:first-child {
+    background: url('./img/4k-wallpaper-beans-beverage-1749303.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url('img/beverage-caffeine-coffee-1212842.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url('img/black-and-white-desk-electronics-265679.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url('img/coffee-computer-cup-114907.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+    background: url('img/design-development-electronics-326424.jpg') no-repeat center center/cover;
+}
+
+
+/* 
+@media (max-width: 800px) {
+    #welcome {
+        background-size: contain;
+
+    }
+
+     @media (max-width: 300px) {
+        #welcome {
+            background-image: none;
+        } 
+    }*/
+
+
+
+
+.project-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+}
+
+.project-tile {
+    border: 2px black solid;
+    margin: 20px 20px;
+
+}
+
+.project-tile img {
+    height: 13em;
+    width: 16em;
+
+}
+
+
+.social {
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+}
+
+
+.social ul {
+    padding: 7rem 1rem;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+.social ul a {
+    padding: 1.5em;
+}
+
+.social img {
+    height: 100px;
+    width: 100px;
+}
+
+@media (max-width: 400px) {
+    .social ul {
+        padding: 1.2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social img {
+        height: 80px;
+        width: 80px;
+    }
+
+}
+
+
+.small-footer {
+    height: 20vh
+}
