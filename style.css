@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+:root {
+    --base: #71eeb8;
+    --base-dark: #38bb88;
+    --hl: #ff9f79;
+    --dark-hl: #c9764a;
+    --dark-bg: #c5d5cb;
+    --neut-drk: #f4f4f4;
+    --neut-lg: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.nav {
+    background-color: var(--base-dark);
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    height: 40px;
+    width: 100vw;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    color: #f4f4f4;
+}
+
+.nav-menu {
+    display: flex;
+    list-style-type: none;
+}
+
+
+.nav-menu a {
+    text-decoration: none;
+    padding: 1rem;
+    align-self: flex-end;
+    color: #f4f4f4;
+
+}
+
+.nav-menu a:hover {
+    color: #333;
+    transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 544px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+
+
+    .nav-menu {
+
+        flex-direction: column;
+    }
+
+    .nav-menu li {
+        padding: 0.2rem;
+    }
+}
+
+.container {
+    overflow: hidden;
+}
+
+.show-case {
+    text-align: center;
+    padding: 6rem;
+    text-transform: capitalize;
+    font-weight: 100;
+    background-color: var(--hl);
+    color: #f4f4f4;
+
+}
+
+
+.slider {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* this will make the div's invisible, and the transition allows them pass in an animated manner */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 0.5rem;
+}
+
+.slide .content h4 {
+    margin-bottom: 10px;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    /* selected properties,timing, funtion, delay*/
+    transition: all 0.7s ease-in-out 0.3s;
+
+}
+
+
+@media (max-width: 700px) {
+    .slide .content {
+        width: 100%;
+    }
+
+    .slider {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .slide {
+        width: 100%;
+        height: 90%;
+
+
+    }
+}
+
+.buttons {
+    position: absolute;
+    width: 100%;
+    top: 60vh
+}
+
+.buttons button#next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+
+.buttons button#prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+
+.buttons button {
+
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    /* Removes the outline that can cover an element */
+    outline: none;
+}
+
+
+
+.buttons button:hover {
+    background-color: #fff;
+    color: #333;
+    transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 367px) {
+    .buttons {
+        top: 100vh;
+    }
+}
+
+
+
+/* Background images */
+
+.slide:first-child {
+    background: url('https://res.cloudinary.com/stealthman22/image/upload/v1555206450/4k-wallpaper-beans-beverage-1749303.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url('https://res.cloudinary.com/stealthman22/image/upload/v1555206442/beverage-caffeine-coffee-1212842.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url('https://res.cloudinary.com/stealthman22/image/upload/v1555074216/black-and-white-desk-electronics-265679.jpg') no-repeat center center/cover;
+}
+
+
+.slide:nth-child(4) {
+    background: url('https://res.cloudinary.com/stealthman22/image/upload/v1555074208/coffee-computer-cup-114907.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+    background: url('https://res.cloudinary.com/stealthman22/image/upload/v1555074326/design-development-electronics-326424.jpg') no-repeat center center/cover;
+}
+
+
+
+.project-ctn {
+    background-color: var(--base);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+
+}
+
+.project-tile {
+    margin: 20px 20px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+
+}
+
+.project-tile img {
+    height: 14rem;
+    width: 15em;
+}
+
+.project-tile p {
+    color: #333;
+}
+
+.project-tile p:hover {
+    color: var(--neut-lg);
+}
+
+
+@media (max-width: 300px) {
+    .project-tile img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+
+
+.social-btn {
+    padding: 1rem;
+    text-align: center;
+
+}
+
+.social-btn ul {
+    padding: 7rem 1rem;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+.social-btn ul a {
+    padding: 1.5em;
+    outline: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-btn a:hover {
+    color: var(--dark-hl);
+    transition: all 0.4s ease-in-out;
+}
+
+.social-btn p {
+    margin-left: 15px;
+}
+
+.social-btn img {
+    height: 100px;
+    width: 100px;
+}
+
+@media (max-width: 400px) {
+
+    .social-btn ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-btn img {
+        height: 80px;
+        width: 80px;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .social-btn {
+        width: 100vw;
+        height: 100vh
+    }
+}
+
+
+
+.footer {
+    background-color: var(--dark-bg);
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer a:hover {
+    background-color: var(--hl);
+}
+
+/* Hack for navbar jumping rightly */
+.space-out {
+    position: absolute;
+    margin-top: -80px;
+}
+
+
+
+.margin-top {
+    margin-top: 40px;
+}
